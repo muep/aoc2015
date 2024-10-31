@@ -23,3 +23,7 @@
 (load "day-01.scm")
 (define day-01-input (load-input "input/day-01.txt"))
 (run-parts day-01-input (get-parts day-01) 1)
+
+(load "day-02.scm")
+(define day-02-input (load-input "input/day-02.txt"))
+(run-parts day-02-input (get-parts day-02) 1)
