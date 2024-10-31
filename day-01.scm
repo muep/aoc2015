@@ -27,4 +27,5 @@
                      (map instruction->offset
                           (string->list 
                            (apply string-append lines))))))))
-    (list part-1 part-2)))
+    `((part-1 . ,part-1)
+      (part-2 . ,part-2))))
