@@ -15,11 +15,7 @@
     (newline)
     (run-parts input (cdr parts) (+ n 1))))
 
-(define (get-parts day)
-  (list (cdr (assoc 'part-1 day))
-        (cdr (assoc 'part-2 day))))
-
 (display "Day 01\n")
 (load "day-01.scm")
 (define day-01-input (load-input "input/day-01.txt"))
-(run-parts day-01-input (get-parts day-01) 1)
+(run-parts day-01-input day-01 1)
