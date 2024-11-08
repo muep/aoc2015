@@ -8,16 +8,6 @@
               (reverse buf))
             (loop (cons line buf)))))))
 
-(define (slurp path)
-  (let ((f (open-input-file path)))
-    (let loop ((buf ""))
-      (let ((slice (read-string 1024 f)))
-        (if (eof-object? slice)
-            (begin
-              (close-input-port f)
-              buf)
-            (loop (string-append buf slice)))))))
-
 (define (run-parts input parts n)
   (unless (null? parts)
     (display (string-append "  Part " (number->string n) ": "))
