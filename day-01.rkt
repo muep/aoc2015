@@ -1,5 +1,8 @@
 #lang racket
 
+(provide part-1)
+(provide part-2)
+
 (define (slurp path)
   (let ((port (open-input-file path)))
     (port->string port #:close? #t)))
@@ -10,10 +13,10 @@
     ((equal? #\) instruction) -1)
     (else 0)))
 
-(define (day-01-part-1 path)
+(define (part-1 path)
   (foldl + 0 (map instruction->offset (string->list (slurp path)))))
 
-(define (day-01-part-2 path)
+(define (part-2 path)
   (car
    (foldl
     (lambda (offset state)

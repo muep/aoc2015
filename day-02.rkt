@@ -1,5 +1,8 @@
 #lang racket
 
+(provide part-1)
+(provide part-2)
+
 (define (map-lines- process-line port acc)
   (let ((line (read-line port)))
       (if (eof-object? line)
@@ -27,10 +30,10 @@
 (define giftbox->area (giftbox-prop paper-amount))
 (define giftbox->ribbon-amount (giftbox-prop ribbon-amount))
 
-(define (day-02-part-1 filename)
+(define (part-1 filename)
   (let ((f (open-input-file filename)))
     (foldl + 0 (map-lines giftbox->area f))))
 
-(define (day-02-part-2 filename)
+(define (part-2 filename)
   (let ((f (open-input-file filename)))
     (foldl + 0 (map-lines giftbox->ribbon-amount f))))
