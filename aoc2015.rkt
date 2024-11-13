@@ -3,12 +3,15 @@
 (require srfi/13)
 (require (prefix-in day-01:: "day-01.rkt"))
 (require (prefix-in day-02:: "day-02.rkt"))
+(require (prefix-in day-03:: "day-03.rkt"))
 
 (define days
   `((1 . ((1 . ,day-01::part-1)
           (2 . ,day-01::part-2)))
     (2 . ((1 . ,day-02::part-1)
-          (2 . ,day-02::part-2)))))
+          (2 . ,day-02::part-2)))
+    (3 . ((1 . ,day-03::part-1)
+          (2 . ,day-03::part-2)))))
 
 (define (run-parts parts path)
   (let ((part-1 (assoc 1 parts))
